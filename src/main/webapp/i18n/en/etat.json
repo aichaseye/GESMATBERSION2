@@ -1,0 +1,9 @@
+{
+  "dbGestionMatriculeApp": {
+    "Etat": {
+      "null": "",
+      "REDOUBLANT": "E",
+      "PASSANT": "E"
+    }
+  }
+}

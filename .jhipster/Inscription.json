@@ -1,0 +1,36 @@
+{
+  "applications": ["db_gestion_Matricule"],
+  "changelogDate": "20220408130329",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "inscription",
+  "fields": [
+    {
+      "fieldName": "anneeIns",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Inscription",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "nomCompletApp",
+      "otherEntityName": "apprenant",
+      "otherEntityRelationshipName": "inscription",
+      "relationshipName": "apprenant",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nomClasse",
+      "otherEntityName": "classe",
+      "otherEntityRelationshipName": "inscription",
+      "relationshipName": "classe",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

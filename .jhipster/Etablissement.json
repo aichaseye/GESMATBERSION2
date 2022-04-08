@@ -1,0 +1,91 @@
+{
+  "applications": ["db_gestion_Matricule"],
+  "changelogDate": "20220408130129",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "etablissement",
+  "fields": [
+    {
+      "fieldName": "nomEtab",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "typeEtab",
+      "fieldType": "TypeEtab",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "LyceeTechnique,CFP"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "StatutEtab",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Prive,Publique"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "email": true,
+        "unique": true
+      }
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "matriculeEtab",
+      "fieldType": "String",
+      "options": {
+        "unique": true
+      }
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "Task entity.\\n@author The JHipster team.",
+  "jpaMetamodelFiltering": false,
+  "name": "Etablissement",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "bon",
+      "otherEntityRelationshipName": "etablissement",
+      "relationshipName": "bon",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "personnel",
+      "otherEntityRelationshipName": "etablissement",
+      "relationshipName": "personnel",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "classe",
+      "otherEntityRelationshipName": "etablissement",
+      "relationshipName": "classe",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "nomReg",
+      "otherEntityName": "localisation",
+      "otherEntityRelationshipName": "etablissement",
+      "relationshipName": "localisation",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nomInsp",
+      "otherEntityName": "inspection",
+      "otherEntityRelationshipName": "etablissement",
+      "relationshipName": "inspection",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

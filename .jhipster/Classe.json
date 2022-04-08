@@ -1,0 +1,35 @@
+{
+  "applications": ["db_gestion_Matricule"],
+  "changelogDate": "20220408130629",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "classe",
+  "fields": [
+    {
+      "fieldName": "nomClasse",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Classe",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "inscription",
+      "otherEntityRelationshipName": "classe",
+      "relationshipName": "inscription",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "nomEtab",
+      "otherEntityName": "etablissement",
+      "otherEntityRelationshipName": "classe",
+      "relationshipName": "etablissement",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,9 @@
+{
+  "dbGestionMatriculeApp": {
+    "Sexe": {
+      "null": "",
+      "Masclin": "Masclin",
+      "Feminin": "Feminin"
+    }
+  }
+}

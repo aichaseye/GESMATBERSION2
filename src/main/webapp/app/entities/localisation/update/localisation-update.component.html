@@ -1,0 +1,75 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-localisation-heading"
+        data-cy="LocalisationCreateUpdateHeading"
+        jhiTranslate="dbGestionMatriculeApp.localisation.home.createOrEditLabel"
+      >
+        Create or edit a Localisation
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbGestionMatriculeApp.localisation.region" for="field_region">Region</label>
+          <select class="form-control" name="region" formControlName="region" id="field_region" data-cy="region">
+            <option [ngValue]="null">{{ 'dbGestionMatriculeApp.NomReg.null' | translate }}</option>
+            <option *ngFor="let nomReg of nomRegValues" [value]="nomReg">{{ 'dbGestionMatriculeApp.NomReg.' + nomReg | translate }}</option>
+          </select>
+          <div *ngIf="editForm.get('region')!.invalid && (editForm.get('region')!.dirty || editForm.get('region')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('region')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbGestionMatriculeApp.localisation.departement" for="field_departement"
+            >Departement</label
+          >
+          <select class="form-control" name="departement" formControlName="departement" id="field_departement" data-cy="departement">
+            <option [ngValue]="null">{{ 'dbGestionMatriculeApp.NomDep.null' | translate }}</option>
+            <option *ngFor="let nomDep of nomDepValues" [value]="nomDep">{{ 'dbGestionMatriculeApp.NomDep.' + nomDep | translate }}</option>
+          </select>
+          <div *ngIf="editForm.get('departement')!.invalid && (editForm.get('departement')!.dirty || editForm.get('departement')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('departement')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbGestionMatriculeApp.localisation.commune" for="field_commune">Commune</label>
+          <input type="text" class="form-control" name="commune" id="field_commune" data-cy="commune" formControlName="commune" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

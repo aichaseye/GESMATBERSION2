@@ -1,0 +1,9 @@
+{
+  "dbGestionMatriculeApp": {
+    "TypeEtab": {
+      "null": "",
+      "LyceeTechnique": "LyceeTechnique",
+      "CFP": "CFP"
+    }
+  }
+}

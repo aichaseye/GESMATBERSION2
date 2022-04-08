@@ -1,0 +1,9 @@
+{
+  "dbGestionMatriculeApp": {
+    "StatutApp": {
+      "null": "",
+      "Prive": "Prive",
+      "Publique": "Publique"
+    }
+  }
+}
