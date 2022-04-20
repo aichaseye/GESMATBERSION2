@@ -243,3 +243,7 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [angular cli]: https://cli.angular.io/
 
 # GESMATBERSION2
+
+# GESMATETAB
+
+# GESTIONmTRICULEefpt
